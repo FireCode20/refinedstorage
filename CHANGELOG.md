@@ -1,5 +1,306 @@
 # Refined Storage Changelog
 
+### 1.2
+- Added new autocrafting system (way2muchnoise, raoulvdberge)
+- Added ore dictionary autocrafting (way2muchnoise, raoulvdberge)
+- Added recipe transfer handler for Processing Pattern Encoder (way2muchnoise)
+- Added void excess items functionality to storage blocks (geldorn, raoulvdberge, InusualZ)
+- Added config option to configure RS to EU conversion rates (InusualZ)
+- Added ability to toggle between read and write, read and write mode in storage blocks (InusualZ, raoulvdberge)
+- Added Silk Touch Upgrade for Destructor (InusualZ)
+- Added Fortune Upgrade for Destructor (InusualZ)
+- Added ore dictionary compare toggle to storage I/O blocks (raoulvdberge)
+- Added disk icons to Disk Drive block that shows the disks (raoulvdberge)
+- Changed default EU conversion rate to be 1:8 with RS (raoulvdberge)
+- Controller sorts by energy usage in GUI (highest to lowest) (raoulvdberge)
+- The Constructor can now drop items in the world (raoulvdberge)
+- The Constructor can now place skulls (modmuss50)
+- The Destructor can now pick up items in the world (InusualZ)
+- Stack upgrade in Importer / Exporter in fluid mode and Fluid Interface now transfers 64 buckets at once (raoulvdberge)
+- Detector without any filter will detect based on total items or fluids stored (raoulvdberge)
+- Storage disks and storage blocks now don't despawn anymore when dropped in the world (raoulvdberge)
+- Grid item and fluid quantity now only rounds to 1 digit after comma (raoulvdberge)
+- Items count can no longer overflow, and will max out at the maximum integer value (raoulvdberge)
+- Limited network transmitter usage to 1000 RS/t (raoulvdberge)
+- Fixed resetting a stack of patterns yields 1 blank pattern (raoulvdberge)
+- Fixed being able to pipe items in the export slots of the Interface (InusualZ)
+- Fixed Interface being stuck when item isn't accepted in storage (InusualZ)
+- Fixed items with colored name being uncolored in Grid (raoulvdberge)
+- Fixed fluid rendering bugging out side buttons (raoulvdberge)
+- Fixed item count going negative when using the Disk Manipulator (InusualZ)
+- Fixed Storage Drawer quantities not updating properly on Void Drawers (geldorn)
+- Fixed Disk Manipulator blocking items transferring in some cases (InusualZ)
+- Fixed External Storage crafting recipe not supporting ore dictionary chests (raoulvdberge)
+- Fixed when shift clicking crafting recipe and inventory is full items are dropping on the ground instead of going in the system (raoulvdberge)
+- Fixed glitchy rendering of cable parts in item form (raoulvdberge)
+- Fixed Destructor being able to break bedrock (InusualZ)
+- Fixed External Storage thinking that items are inserted in Extra Utilities Trash Cans (InusualZ)
+- Updated Storage Drawers API (raoulvdberge)
+
+### 1.1.3
+- Fixed some clients not starting up due to too many Disk Drive model permutations (raoulvdberge)
+
+### 1.1.2
+- Added recipe transfer handler for Solderer (way2muchnoise)
+- It is now possible to start a crafting task even if the crafting preview says you can't (raoulvdberge)
+- Fixed crash with JEI when changing screens in autocrafting (raoulvdberge)
+- Fixed not being able to start autocrafting in other dimensions with Network Transmitter / Network Receivers (raoulvdberge)
+- Fixed JEI overlay disappearing now and again (raoulvdberge)
+- Fixed Detector hitbox (raoulvdberge)
+
+### 1.1.1
+- Fixed crash on servers (raoulvdberge)
+
+### 1.1
+- New art by CyanideX (CyanideX)
+- Added crafting preview screen (way2muchnoise)
+- Added max crafting task depth (raoulvdberge)
+- Added helpful tooltips to Solderer and Processing Pattern Encoder (raoulvdberge)
+- Every machine now compares on damage and NBT by default (raoulvdberge)
+- Updated JEI, fixes crashes (way2muchnoise)
+- Fixed crash with Disk Manipulator (way2muchnoise)
+- Fixed autocrafting not giving back byproducts (raoulvdberge)
+- Detector amount text field doesn't autoselect anymore (raoulvdberge)
+
+### 1.0.5
+- Fixed crafting a complex item causes the process to flow off the Crafting Monitor's GUI (raoulvdberge)
+- Fixed shift clicking from Grid when player inventory is full throwing items in the world (raoulvdberge)
+- Importer now takes a Destruction Core, and Exporter a Construction Core (raoulvdberge)
+- Added Disk Manipulator (way2muchnoise)
+- Added ingame config (way2muchnoise)
+- Added the ability to see the output of a Pattern by holding shift (raoulvdberge)
+- When a machine is in use by a crafting pattern, inserting of items from other patterns will be avoided (raoulvdberge)
+- Exporter in fluid mode and Fluid Interface no longer duplicates fluids that are less than 1 bucket (raoulvdberge)
+- Changed default Grid sorting type to quantity (raoulvdberge)
+- Updated Dutch translation (raoulvdberge)
+- Updated Chinese translation (TartaricAcid)
+
+### 1.0.4
+- Fixed lag caused by Crafter (raoulvdberge)
+
+### 1.0.3
+- Fixed item loading issue (raoulvdberge)
+- Added integration for Forge energy (raoulvdberge)
+- Solderer now accepts items from any side, allowing easier automation (raoulvdberge)
+- Solderer is now intelligent about items in slots, and will only accept an item if it is part of a recipe (raoulvdberge)
+- Changed recipe for upgrades in the Solderer, they now just take 1 of the unique item instead of 2, using redstone instead (raoulvdberge)
+- Fixed fluid autocrafting scheduling too much crafting tasks for buckets (raoulvdberge)
+- Fixed blocks in hand facing wrong direction (raoulvdberge)
+- Updated to Forge 2088 (raoulvdberge)
+
+### 1.0.2
+- Fixed processing patterns not handling item insertion sometimes (raoulvdberge)
+- Removed crafting task limit in crafting start GUI (raoulvdberge)
+- +64 in crafting start GUI now gives 64 from the first time instead of 65 (raoulvdberge)
+
+### 1.0.1
+- Fixed advanced tooltips showing in Grid when not configured to do so (raoulvdberge)
+- Added "autocrafting mode" in Detector, to check if an item is being crafted. If no item is specified, it'll emit a signal if anything is crafting (raoulvdberge)
+- Added an option for the Crafter to trigger autocrafting with a redstone signal (raoulvdberge)
+- Optimized crafting pattern loading (raoulvdberge)
+- Updated to Forge 2084 (raoulvdberge)
+
+### 1.0
+**NOTE:** Due to the new crafting system, all Crafting Patterns made before 1.0 have to be re-made.
+
+- Implemented multithreaded autocrafting (raoulvdberge)
+- Processing patterns now hold their items back for pushing until all the required items are gathered from the system (raoulvdberge)
+- Fixed item and fluid storage stored count having incorrect values at times (raoulvdberge)
+- Reworked Crafting Monitor GUI (raoulvdberge)
+- Fixed problems relating to Crafting Upgrade (scheduling a task wrongly, blocking other tasks, etc) (raoulvdberge)
+- Interface now supports Crafting Upgrade (raoulvdberge)
+- When shift clicking a recipe in the Crafting Grid, the player inventory is now leveraged as well (raoulvdberge)
+- Fixed machines breaking on long distances (raoulvdberge)
+- Fixed Controller rebuilding network graph on energy change (raoulvdberge)
+- Fixed fluids not caring about NBT tags (raoulvdberge)
+- Fixed fluids that have less than 1 bucket stored render only partly in Fluid Grid (raoulvdberge)
+- Fixed Fluid Interface voiding bucket when shift clicking to out slot (raoulvdberge)
+- Fixed wrong machine connection logic (raoulvdberge)
+- Updated to Forge 2077 (raoulvdberge)
+
+### 0.9.4
+- Little fixes in German translation (ThexXTURBOXx)
+- Fixed mod not working without JEI (raoulvdberge)
+- Reverted network changes that caused buggy behavior (raoulvdberge)
+- Reduced explosion radius when multiple controllers are connected to the same network (raoulvdberge)
+
+### 0.9.3
+- Updated German translation for Fluid Storage (0blu)
+- Updated Dutch translation for Fluid Storage (raoulvdberge)
+- Added Chinese translation (TartaricAcid)
+- Added Crafting Tweaks integration (blay09)
+- Reworked storage network code, should fix weird machine disconnection issues (raoulvdberge)
+- Fixed that the Fluid Storage Disk recipe returns an invalid disk (raoulvdberge)
+
+### 0.9.2
+**Bugfixes**
+- Fixed not being able to take out items from Wireless Grid cross-dimensionally
+
+### 0.9.1
+**Bugfixes**
+- Fixed server crash with Grid
+
+### 0.9
+**Bugfixes**
+- Fixed crash with Grid
+- Fixed Grid Filter only updating the Grid when reopening the GUI
+- Fixed Wireless Grid not working cross dimensionally
+- Fixed Grid not displaying items after changing redstone mode
+- Fixed Wireless Transmitter crashing when it is transmitting to a removed dimension
+- Fixed disassembling stacked Storage Blocks only returns 1 set of items
+- Priority field and detector amount field can now display 4 digits at a time
+
+**Features**
+- Added fluid storage
+- Added Russian translation by CorwinTheCat
+- Energy usage of Wireless Grid is now configurable
+- Wireless Transmitters can now only be placed on Cable
+
+### 0.8.20
+**Bugfixes**
+- Fixed crash with Grid
+
+### 0.8.19
+**Bugfixes**
+- Fixed item duplication bug with External Storage
+- Fixed External Storage taking too long to update storage
+- Fixed crash with Grid
+- Fixed crash when shift clicking unsupported item in a slot
+
+### 0.8.18
+**Bugfixes**
+- Fixed Detector mode not persisting
+- Fixed bug where scrollbar didn't scroll correctly and thus hiding some items
+- Fixed Network Transmitter not dropping inventory when broken
+
+### 0.8.17
+**Bugfixes**
+- Fixed Grid causing sorting lag on the client
+
+### 0.8.16
+**Bugfixes**
+- Fixed issue with IC2 integration causing console spam
+- Slight performance increase and network efficiency improvement in all GUI's
+- Slight performance increase in Grid GUI
+- Fixed not being able to change some configs in blocks
+- Fixed serverside configs not syncing up with clientside
+- Fixed not being able to move inventory items in Grid GUI's to hotbar via the number keys
+- Fixed Relays when being in "Ignore Redstone" mode using up energy
+- Fixed Crafter facing bottom side on placement
+- Improved collisions of Cable parts
+- You now have to click the actual cable part head in order to get the GUI open
+
+**Features**
+- Added German translation by ChillUpX
+- Grid Filters can now only filter 9 items, but, Grids take 4 filters now instead
+- Grid Filters can now be configured to compare on NBT and/ or damage
+- It is now possible to shift click items to the Storage Device filters
+- Updated to Forge 2046
+- Updated Tesla
+- Java 8 is now a requirement
+- Added MCMultiPart integration for Cable Parts
+
+### 0.8.15
+**Bugfixes**
+- Fixed server startup crash
+
+### 0.8.14
+**Features**
+- Added Interdimensional Upgrade so the Network Transmitter can work over different dimensions
+
+### 0.8.13
+**Bugfixes**
+- Fixed rendering crash with Disk Drive
+- Fixed crash when quickly toggling sorting direction in Grid
+- Fixed not being able to clear exporter row in interface
+
+**Features**
+- Added config option to set the base energy usage of the Controller (default is 0)
+- Added Grid Filter item to filter items in any Grid
+- Added support for processing patterns with big stacksizes
+- Added Network Transmitter, Network Receiver and Network Cards
+- The slot where the Wireless Grid is in in the Wireless Grid GUI is now disabled, so the item can't be thrown out of the inventory by accident
+- Changed Relay recipe to use redstone torch instead of Basic Processor
+- Placed machines now face the block they are placed on, like hoppers
+
+**NOTE:** Config change: the config options for the energy capacity of the Controller and wether the Controller uses energy are now in a different config category called "controller", if you changed these config options, don't forget the change it under the new category.
+
+### 0.8.12
+**Bugfixes**
+- Fixed dupe bug when shift clicking output slot in grid
+
+### 0.8.11
+**Bugfixes**
+- Fixed minor dupe bug with JEI transferring
+- Fixed exporter crafting upgrades taking priority over other tasks
+- Solderer upgrades go to upgrades slots first now when shift clicking
+- Fixed NPE with incorrectly initialized disks
+- Fixed not being able to take out items of Grid 2K16
+- Fixed not being able to start autocrafting for certain items (most notably IC2 items)
+
+**Features**
+- Added X button to Processing Pattern Encoder to clear configuration of inputs and outputs
+- Added Grid view toggle buttons (regular, craftable items only, no craftable items)
+- Added ability to shift click items into Importer, Exporter, Constructor, Destructor and Detector to set up whitelist / blacklist configurations easier
+- Re-added opposite facing on shift click functionality
+- Updated to Forge 2014
+
+### 0.8.10
+**Bugfixes**
+- Fixed not being able to get some items out of Grid
+- Fixed slight glitch in Constructor and Destructor model
+
+### 0.8.9
+**Bugfixes**
+- Fixed bug where Grid crafting doesn't handle remainder sometimes
+- Fixed caching issues with External Storage
+- Fixed possible crash with Disk Drives
+
+**Features**
+- Added a model for the Constructor
+- Added a model for the Destructor
+- Wireless Transmitters next to each other without any cable or without being connected to a machine won't work anymore, they need to be explictly connected to a cable or other machine
+- Some models / texture tweaks
+
+### 0.8.8
+**Bugfixes**
+- Use ore dictionary for recipes with glass
+- Fixed solderer not working with automation anymore
+
+**Features**
+- Texture tweaks
+
+### 0.8.7
+**Bugfixes**
+- Improved detector model, add a better hitbox for it
+- Improved the Wireless Transmitter texture
+- Wireless Transmitter is now only bright red when connected
+- Fixed crash with External Storage
+- Fixed Detector not unpowering when disconnected from the network
+- Made the Solderer beams be bright red when they are working
+- Added better hitbox for the Solderer
+
+### 0.8.6
+**Bugfixes**
+- Fixed External Storage disconnecting on world reload
+- Fixed External Storage not updating correctly
+- Fixed wireless signal starting from Controller instead of per Wireless Transmitter individually
+- Fixed Controller's redstone state not saving
+- Fixed crafting tasks not saving properly
+- Huge performance improvements to large storage networks
+
+**Features**
+- Re-added Controllers exploding when two of them are connected to the same network
+- Limited some blocks to only have a direction on the x-axis
+- Decreased amount of block updates significantly
+- Added new textures
+- Added model for External Storage
+- Added model for Importer
+- Added model for Exporter
+- Added model for Detector
+- Removed opposite facing on placement mechanic
+- Removed Quartz Enriched Iron Block
+
 ### 0.8.5
 **Bugfixes**
 - Fixed crash when Tesla API is not installed

@@ -3,7 +3,7 @@
   "defaults": {
     "model": "cube_all",
     "textures": {
-      "all": "refinedstorage:blocks/interface"
+      "all": "refinedstorage:blocks/interface_disconnected"
     }
   },
   "variants": {
@@ -12,22 +12,11 @@
         "transform": "forge:default-block"
       }
     ],
-    "direction": {
-      "north": {
-      },
-      "east": {
-      },
-      "south": {
-      },
-      "west": {
-      },
-      "up": {
-      },
-      "down": {
-      }
-    },
     "connected": {
       "true": {
+        "textures": {
+          "all": "refinedstorage:blocks/interface_connected"
+        }
       },
       "false": {
       }

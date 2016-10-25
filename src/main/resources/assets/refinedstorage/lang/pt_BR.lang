@@ -2,7 +2,6 @@ itemGroup.refinedstorage=Refined Storage
 
 gui.refinedstorage:controller.0=Controlador
 gui.refinedstorage:controller.1=Controlador Criativo
-gui.refinedstorage:controller.machine_amount=%dx
 gui.refinedstorage:grid=Grade
 gui.refinedstorage:grid.craft=Craft
 gui.refinedstorage:grid.pattern_create=Criar Padrão
@@ -13,7 +12,6 @@ gui.refinedstorage:importer=Importador
 gui.refinedstorage:exporter=Exportador
 gui.refinedstorage:detector=Detector
 gui.refinedstorage:solderer=Soldador
-gui.refinedstorage:solderer.progress=%d%%
 gui.refinedstorage:destructor=Destruidor
 gui.refinedstorage:constructor=Construtor
 gui.refinedstorage:relay=Retransmissor
@@ -23,7 +21,6 @@ gui.refinedstorage:crafting_monitor=Monitor de Fabricação
 gui.refinedstorage:crafting_monitor.missing_items=Itens faltantes
 gui.refinedstorage:crafting_monitor.items_crafting=Itens em construção
 gui.refinedstorage:crafting_monitor.items_processing=Itens em processamento
-gui.refinedstorage:crafting_monitor.not_started_yet=Não iniciado
 gui.refinedstorage:wireless_transmitter=Transmissor Sem Fio
 gui.refinedstorage:wireless_transmitter.distance=%d blocks
 gui.refinedstorage:crafter=Fabricador
@@ -41,10 +38,7 @@ misc.refinedstorage:storage.stored_minimal=%d
 misc.refinedstorage:storage.stored_capacity_minimal=%d / %d
 misc.refinedstorage:storage.full=%d%% full
 
-misc.refinedstorage:wireless_grid.tooltip.0=X: %d
-misc.refinedstorage:wireless_grid.tooltip.1=Y: %d
-misc.refinedstorage:wireless_grid.tooltip.2=Z: %d
-misc.refinedstorage:wireless_grid.out_of_range=Controlador fora de alcance.
+misc.refinedstorage:wireless_grid.out_of_range=Não há Transmissor Sem Fio na gama.
 misc.refinedstorage:wireless_grid.not_found=Controlador não encontrado.
 
 misc.refinedstorage:pattern.inputs=Entrada
@@ -110,7 +104,6 @@ block.refinedstorage:crafting_monitor.name=Monitor de Fabricação
 block.refinedstorage:wireless_transmitter.name=Transmissor Sem Fio
 block.refinedstorage:crafter.name=Fabricador
 block.refinedstorage:processing_pattern_encoder.name=Codificador de Padrão de Processamento
-block.refinedstorage:quartz_enriched_iron_block.name=Bloco de Ferro Enriquecido com Quartzo
 
 item.refinedstorage:storage_disk.0.name=Disco de Armazenamento 1k
 item.refinedstorage:storage_disk.1.name=Disco de Armazenamento 4k

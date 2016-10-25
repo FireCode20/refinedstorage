@@ -2,7 +2,6 @@ itemGroup.refinedstorage=Refined Storage
 
 gui.refinedstorage:controller.0=Contrôleur
 gui.refinedstorage:controller.1=Contrôleur Créatif
-gui.refinedstorage:controller.machine_amount=%dx
 gui.refinedstorage:grid=Grille
 gui.refinedstorage:grid.craft=Craft
 gui.refinedstorage:grid.pattern_create=Modèle Créatif
@@ -13,7 +12,6 @@ gui.refinedstorage:importer=Importeur
 gui.refinedstorage:exporter=Exporteur
 gui.refinedstorage:detector=Détecteur
 gui.refinedstorage:solderer=Soudeur
-gui.refinedstorage:solderer.progress=%d%%
 gui.refinedstorage:destructor=Destructeur
 gui.refinedstorage:constructor=Constructeur
 gui.refinedstorage:relay=Relais
@@ -23,7 +21,6 @@ gui.refinedstorage:crafting_monitor=Moniteur de Craft
 gui.refinedstorage:crafting_monitor.missing_items=Items manquant
 gui.refinedstorage:crafting_monitor.items_crafting=Items en craft
 gui.refinedstorage:crafting_monitor.items_processing=Items en traitement
-gui.refinedstorage:crafting_monitor.not_started_yet=Pas encore commencé
 gui.refinedstorage:wireless_transmitter=Émetteur sans Fil
 gui.refinedstorage:wireless_transmitter.distance=%d blocks
 gui.refinedstorage:crafter=Crafteur
@@ -41,10 +38,7 @@ misc.refinedstorage:storage.stored_minimal=%d
 misc.refinedstorage:storage.stored_capacity_minimal=%d / %d
 misc.refinedstorage:storage.full=%d%% plein
 
-misc.refinedstorage:wireless_grid.tooltip.0=X: %d
-misc.refinedstorage:wireless_grid.tooltip.1=Y: %d
-misc.refinedstorage:wireless_grid.tooltip.2=Z: %d
-misc.refinedstorage:wireless_grid.out_of_range=Contrôleur hors de portés.
+misc.refinedstorage:wireless_grid.out_of_range=Il n'y a pas un Émetteur sans Fil dans la gamme.
 misc.refinedstorage:wireless_grid.not_found=Contrôleur non trouvé.
 
 misc.refinedstorage:pattern.inputs=Inputs
@@ -110,7 +104,6 @@ block.refinedstorage:crafting_monitor.name=Moniteur de Craft
 block.refinedstorage:wireless_transmitter.name=Transmetteur sans Fil
 block.refinedstorage:crafter.name=Crafteur
 block.refinedstorage:processing_pattern_encoder.name=Encodeur de Modèle de Traitement
-block.refinedstorage:quartz_enriched_iron_block.name=Fer Enrichi de Quartz Bloc
 
 item.refinedstorage:storage_disk.0.name=Disque de Stockage de 1k
 item.refinedstorage:storage_disk.1.name=Disque de Stockage de 4k

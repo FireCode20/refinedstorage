@@ -10,17 +10,28 @@ buildscript {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
     }
 }
+
+plugins {
+    id "com.jfrog.bintray" version "1.7"
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = "0.8.6"
+version = "1.2-beta2"
 group = "refinedstorage"
 archivesBaseName = "refinedstorage"
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 minecraft {
-    version = "1.10-12.18.0.2000-1.10.0"
+    version = "1.10.2-12.18.1.2095"
     runDir = "run"
     useDepAts = true
-    mappings = "snapshot_20160518"
+    mappings = "snapshot_20160910"
 }
 
 repositories {
@@ -34,12 +45,17 @@ repositories {
         name = "ic2"
         url = "http://maven.ic2.player.to/"
     }
+    maven {
+        url "http://maven.amadornes.com/"
+    }
 }
 
 dependencies {
-    deobfCompile "mezz.jei:jei_1.10:3.7.+"
-    compile "net.darkhax.tesla:Tesla:1.9.4-1.1.0.24"
-    compile "net.industrial-craft:industrialcraft-2:2.6.7-ex110:api"
+    deobfCompile "mezz.jei:jei_1.10.2:3.12.+:api"
+    runtime "mezz.jei:jei_1.10.2:3.12.+"
+    compile "net.darkhax.tesla:Tesla:1.10-1.2.+"
+    compile "net.industrial-craft:industrialcraft-2:2.6.67-ex110:api"
+    deobfCompile "MCMultiPart:MCMultiPart:1.2.1+:universal"
 }
 
 processResources {
@@ -54,5 +70,51 @@ processResources {
 
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
+    }
+}
+
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    classifier 'deobf'
+}
+
+task apiJar(type: Jar, dependsOn: 'sourceMainJava') {
+    from sourceSets.main.allSource
+    from sourceSets.main.output
+    include 'com/raoulvdberge/refinedstorage/api/**/*'
+    classifier 'api'
+}
+
+artifacts {
+    archives deobfJar
+    archives apiJar
+    archives jar
+}
+
+publishing {
+    publications {
+        MyPublication(MavenPublication) {
+            groupId = project.group
+            artifactId = project.archivesBaseName
+            version = project.version + '-' + System.getenv('TRAVIS_BUILD_NUMBER')
+            artifact deobfJar
+            artifact apiJar
+            artifact jar
+        }
+    }
+}
+
+bintray {
+    user = System.getenv('BINTRAY_USER')
+    key = System.getenv('BINTRAY_KEY')
+    publications = ['MyPublication']
+    publish = true
+    pkg {
+        repo = 'dev'
+        name = 'refinedstorage'
+        version {
+            name = project.version + '-' + System.getenv('TRAVIS_BUILD_NUMBER')
+            released = new Date()
+        }
     }
 }
